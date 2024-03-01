@@ -1,0 +1,2 @@
+BUGS
+-fix index out of range when building with no dialog is visited
