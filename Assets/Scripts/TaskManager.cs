@@ -33,6 +33,17 @@ public class TaskManager : MonoBehaviour
     {
         Debug.Log("completing " + task.text + " task");
     }
+
+    public List<Task> GetTasksForTargetBuilding(BuildingTag tag)
+    {
+        List<Task> tasksNeeded = new List<Task>();
+        foreach (Task t in tasks)
+        {
+            if (t.targetBuilding == tag)
+                tasksNeeded.Add(t);
+        }
+        return tasksNeeded;
+    }
 }
 
 public class Task
@@ -42,7 +53,7 @@ public class Task
     public int lovePoints;
     public TaskType type;
 
-    public string targetBuilding;
+    public BuildingTag targetBuilding;
 
     public Task(string text, TaskType type)
     {
