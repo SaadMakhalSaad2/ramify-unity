@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     GameState state;
 
-//some stupid comment for testing version control push
+    //some stupid comment for testing version control push
     private void Awake()
     {
         if (instance != null && instance != this)

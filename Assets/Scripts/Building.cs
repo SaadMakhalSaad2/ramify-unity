@@ -18,11 +18,15 @@ public class Building : MonoBehaviour, Interactable
 
     private void CompleteVisitBuildingTask()
     {
-        List<Task> tasksToComplete = GameManager.instance.taskManager.GetTasksForTargetBuilding(
-            tag
-        );
-        if (tasksToComplete.Count != 0)
-            GameManager.instance.taskManager.CompelteTask(tasksToComplete[0]);
+        // List<Task> tasksToComplete = GameManager.instance.taskManager.GetTasksForTargetBuilding(
+        //     this.tag
+        // );
+        // if (tasksToComplete.Count != 0)
+        //     GameManager.instance.taskManager.CompelteTask(tasksToComplete[0]);
+        Task taskToDisplay = GameManager.instance.taskManager.GetNextTask();
+        if (taskToDisplay != null && taskToDisplay.targetBuilding == this.tag)
+            GameManager.instance.taskManager.CompelteTask(taskToDisplay);
+
     }
 }
 

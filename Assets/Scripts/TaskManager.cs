@@ -40,6 +40,8 @@ public class TaskManager : MonoBehaviour
     {
         Debug.Log("completing " + task.text + " task");
         GameManager.instance.playerHealth.Heal(5);
+        PopTask(task.id);
+        GameManager.instance.taskManager.DisplayTask(0);
     }
 
     public List<Task> GetTasksForTargetBuilding(BuildingTag tag)
@@ -51,6 +53,24 @@ public class TaskManager : MonoBehaviour
                 tasksNeeded.Add(t);
         }
         return tasksNeeded;
+    }
+
+    public Task GetNextTask()
+    {
+        if (this.tasks.Count != 0)
+            return this.tasks[0];
+        return null;
+    }
+
+    private void PopTask(string id)
+    {
+        List<Task> newTasks = new List<Task>();
+        foreach (Task t in this.tasks)
+        {
+            if (t.id != id)
+                newTasks.Add(t);
+        }
+        this.tasks = newTasks;
     }
 }
 
