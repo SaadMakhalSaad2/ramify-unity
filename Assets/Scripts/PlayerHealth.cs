@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
+        currentHealth = 20;
         healthBar.SetMaxHealth(maxHealth);
     }
 

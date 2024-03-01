@@ -1,0 +1,10 @@
+ENHANCEMENTS
+-multiple dialog/dialog types per building or npc
+-Enahnace task selection and completion logic
+
+IDEAS
+-a bunch of collectables
+-gifting collectables to npcs in exchange for benefit
+
+BUGS
+-fix index out of range when building with no dialog is visited

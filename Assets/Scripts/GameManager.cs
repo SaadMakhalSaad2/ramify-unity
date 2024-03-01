@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public TaskManager taskManager;
 
     [SerializeField]
-    PlayerHealth playerHealth;
+    public PlayerHealth playerHealth;
 
     [SerializeField]
     PlayerMovement playerMovement;
@@ -40,7 +40,6 @@ public class GameManager : MonoBehaviour
         DialogManager.Instance.OnShowDialog += () =>
         {
             state = GameState.DIALOG;
-            playerHealth.TakeDamage(5);
         };
         DialogManager.Instance.OnHideDialog += () =>
         {

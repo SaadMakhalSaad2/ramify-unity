@@ -16,12 +16,13 @@ public class Building : MonoBehaviour, Interactable
         StartCoroutine(DialogManager.Instance.ShowDialog(dialog));
     }
 
-    //Enahnace task selection and completion logic
     private void CompleteVisitBuildingTask()
     {
-        List<Task> tasksToComplete = GameManager.instance.taskManager.GetTasksForTargetBuilding(tag);
-        Debug.Log("found " + tasksToComplete[0] + " to complete");
-        //GameManager.instance.taskManager.CompelteTask(tasksToComplete[0]);
+        List<Task> tasksToComplete = GameManager.instance.taskManager.GetTasksForTargetBuilding(
+            tag
+        );
+        if (tasksToComplete.Count != 0)
+            GameManager.instance.taskManager.CompelteTask(tasksToComplete[0]);
     }
 }
 
